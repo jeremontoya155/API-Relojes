@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const ZKLib = require('node-zklib');
 const xlsx = require('xlsx');
 const fs = require('fs');
@@ -11,6 +12,7 @@ const securityKey = process.env.SECURITY_KEY; // Consumir la clave de seguridad 
 
 app.set('view engine', 'ejs');
 app.use(express.json());
+app.use(cors()); // Habilitar CORS para todas las rutas
 
 // Middleware para verificar la clave de seguridad en las rutas protegidas
 const verifyApiKey = (req, res, next) => {
