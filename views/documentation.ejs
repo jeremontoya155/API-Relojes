@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Attendance API Documentation</h1>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Authentication</h2>
+            </div>
+            <div class="card-body">
+                <p>To access the API, you must include the following API key as a query parameter in the request:</p>
+                <pre><code>?api_key=<%= apiKey %></code></pre>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Endpoint: Fetch Attendance Data</h2>
+            </div>
+            <div class="card-body">
+                <h3>GET <code><%= apiUrl %></code></h3>
+                <p>This endpoint allows you to fetch attendance data from one or multiple branches.</p>
+
+                <h4>Query Parameters:</h4>
+                <ul>
+                    <li><code>branch</code> (optional): The name of the branch to fetch data from. If omitted, data from all branches will be fetched.</li>
+                    <li><code>api_key</code> (required): The API key for authentication.</li>
+                </ul>
+
+                <h4>Example Request:</h4>
+                <pre><code>curl -X GET "<%= apiUrl %>?branch=Main%20Branch&api_key=<%= apiKey %>"</code></pre>
+
+                <h4>Response:</h4>
+                <p>The API returns a JSON object with the attendance data. Example:</p>
+                <pre><code>{
+    "success": true,
+    "data": [
+        {
+            "uid": "123",
+            "timestamp": "2024-08-14T08:45:00",
+            "status": "1",
+            "punch": "0",
+            "branch": "Main Branch"
+        }
+    ]
+}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
