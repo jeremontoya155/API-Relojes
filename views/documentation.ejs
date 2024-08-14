@@ -1,44 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Documentation</title>
+    <title>Documentación de la API de Asistencia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4">Attendance API Documentation</h1>
+        <h1 class="mb-4">Documentación de la API de Asistencia</h1>
 
         <div class="card mb-4">
             <div class="card-header">
-                <h2>Authentication</h2>
+                <h2>Autenticación</h2>
             </div>
             <div class="card-body">
-                <p>To access the API, you must include the following API key as a query parameter in the request:</p>
+                <p>Para acceder a la API, debes incluir la siguiente clave de API como un parámetro de consulta en la solicitud:</p>
                 <pre><code>?api_key=<%= apiKey %></code></pre>
             </div>
         </div>
 
         <div class="card mb-4">
             <div class="card-header">
-                <h2>Endpoint: Fetch Attendance Data</h2>
+                <h2>Endpoint: Obtener Datos de Asistencia</h2>
             </div>
             <div class="card-body">
                 <h3>GET <code><%= apiUrl %></code></h3>
-                <p>This endpoint allows you to fetch attendance data from one or multiple branches.</p>
+                <p>Este endpoint te permite obtener los datos de asistencia de una o varias sucursales.</p>
 
-                <h4>Query Parameters:</h4>
+                <h4>Parámetros de Consulta:</h4>
                 <ul>
-                    <li><code>branch</code> (optional): The name of the branch to fetch data from. If omitted, data from all branches will be fetched.</li>
-                    <li><code>api_key</code> (required): The API key for authentication.</li>
+                    <li><code>branch</code> (opcional): El nombre de la sucursal de la cual deseas obtener los datos. Si se omite, se obtendrán los datos de todas las sucursales.</li>
+                    <li><code>api_key</code> (requerido): La clave de API para la autenticación.</li>
                 </ul>
 
-                <h4>Example Request:</h4>
-                <pre><code>curl -X GET "<%= apiUrl %>?branch=Main%20Branch&api_key=<%= apiKey %>"</code></pre>
+                <h4>Ejemplo de Solicitud:</h4>
+                <pre><code>curl -X GET "<%= apiUrl %>?branch=Main%20Branch&api_key=(Cargar Aqui la API KEY)"</code></pre>
 
-                <h4>Response:</h4>
-                <p>The API returns a JSON object with the attendance data. Example:</p>
+                <h4>Respuesta:</h4>
+                <p>La API devuelve un objeto JSON con los datos de asistencia. Ejemplo:</p>
                 <pre><code>{
     "success": true,
     "data": [
