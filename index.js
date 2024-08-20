@@ -50,7 +50,7 @@ app.get('/fetch-attendance', verifyApiKey, async (req, res) => {
     for (const branch of selectedBranches) {
         if (!branch.ip) continue;
 
-        const zkInstance = new ZKLib(branch.ip, 4370, 10000, 4000);
+        const zkInstance = new ZKLib(branch.ip, 4375, 10000, 4000);
 
         try {
             await zkInstance.createSocket();
